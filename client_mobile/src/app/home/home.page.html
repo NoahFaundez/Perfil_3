@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button routerLink="edit" class="editForm">
+        <ion-icon slot="end" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>
       Perfil
     </ion-title>
@@ -13,7 +18,7 @@
       <ion-card-title>{{ this.data[0].name + ' ' + this.data[0].lastName}}</ion-card-title>
       <ion-card-subtitle>Estudiante</ion-card-subtitle>
     </ion-card-header>
-  
+
     <ion-card-content>
       {{ this.data[0].summary }}
     </ion-card-content>
