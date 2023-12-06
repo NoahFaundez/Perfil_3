@@ -22,7 +22,13 @@ Profile.init({
   email: DataTypes.STRING,
   city: DataTypes.STRING,
   country: DataTypes.STRING,
-  summary: DataTypes.STRING
+  summary: DataTypes.STRING,
+  frameworks: {
+    type: DataTypes.ARRAY(DataTypes.JSON)
+  },
+  hobbies: {
+    type: DataTypes.ARRAY(DataTypes.JSON)
+  }
 }, { sequelize, modelName: 'profile' });
 
 // Sync models with database
@@ -34,13 +40,23 @@ app.use(bodyParser.json());
 
 // CRUD routes for User model
 app.get('/api/profile', async (req, res) => {
-  const profile = await Profile.findAll();
-  res.json(profile);
+  try {
+    const profile = await Profile.findAll();
+    res.json(profile);  
+  } catch (error) {
+    console.log(error);
+  }
+  
 });
 
 app.post('/api/profile', async (req, res) => {
-  const profile = await Profile.create(req.body);
-  res.json(profile);
+  try {
+    const profile = await Profile.create(req.body);
+    res.json(profile);  
+  } catch (error) {
+    console.log(error);
+  }
+  
 });
 
 // Start server

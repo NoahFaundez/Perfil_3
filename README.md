@@ -1,6 +1,6 @@
 # Profile for introduction to web/mobile development
 
-This is a repository for an a application that show the profile of the database in a Express server with Angular client
+This is a repository for an a application that show the profile of the database in a Express server with Ionic client
 
 This project was generated with [Ionic CLI](https://github.com/angular/angular-cli)
 
